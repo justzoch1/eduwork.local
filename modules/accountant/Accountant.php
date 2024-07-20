@@ -2,7 +2,7 @@
     class Accountant {
 
         public function upload($conn) {
-            $uploadDir = '../uploads/';
+            $uploadDir = '../../uploads/';
             $fileName = basename($_FILES['file']['name']);
             $targetFilePath = $uploadDir . $fileName;
             $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
@@ -37,7 +37,7 @@
                 if (unlink($file['file_path'])) {
                     $stmt = $conn->prepare("DELETE FROM uploads WHERE id = ?");
                     $stmt->execute([$fileId]);
-                    header('Location: documents.php');
+                    header('Location: #');
                     exit();
                 } else {
                     echo "Ошибка при удалении файла.";

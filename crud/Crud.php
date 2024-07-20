@@ -1,6 +1,6 @@
 <?php 
 
-abstract class Crud {
+class Crud {
 
     public function show($conn) {
         // Отобразить конкретную ***

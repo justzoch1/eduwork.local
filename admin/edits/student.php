@@ -3,7 +3,7 @@ session_start();
 include ("../../crud/realization/Student.php");
 include ("../../config.php");
 
-$student = new Student();
+$studentObj = new Student();
 
 if ($_SESSION['role'] != 'admin') {
     header('Location: ../user/auth/login.php');
@@ -11,11 +11,11 @@ if ($_SESSION['role'] != 'admin') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['student_id'])) {
-    $student->show($conn);
+    $student = $studentObj->show($conn);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_student'])) {
-    $student->update($conn);
+    $studentObj->update($conn);
 }
 
 ?>

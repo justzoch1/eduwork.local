@@ -71,6 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_teacher'])) {
             <button type="submit" class="btn btn-primary" name="add_teacher">Добавить преподавателя</button>
         </div>
     </form>
+<div>
 
 <div id="teacher">
 <h3>Список преподавателей</h3>

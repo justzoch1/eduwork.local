@@ -3,7 +3,7 @@ session_start();
 include ("../../crud/realization/Group.php");
 include ("../../config.php");
 
-$group = new Group();
+$groupObj = new Group();
 
 if ($_SESSION['role'] != 'admin') {
     header('Location: ../user/auth/login.php');
@@ -11,11 +11,11 @@ if ($_SESSION['role'] != 'admin') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['group_id'])) {
-    $group->update($conn);
+    $group = $groupObj->show($conn);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_group'])) {
-    $group->update($conn);
+    $groupObj->update($conn);
 }
 ?>
 

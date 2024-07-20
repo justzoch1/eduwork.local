@@ -3,7 +3,7 @@ session_start();
 include ("../../crud/realization/Teacher.php");
 include ("../../config.php");
 
-$teacher = new Teacher();
+$teacherObj = new Teacher();
 
 if ($_SESSION['role'] != 'admin') {
     header('Location: ../user/auth/login.php');
@@ -11,12 +11,13 @@ if ($_SESSION['role'] != 'admin') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['teacher_id'])) {
-    $teacher->show($conn);
+    $teacher = $teacherObj->show($conn);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_teacher'])) {
-    $teacher->update($conn);
+    $teacherObj->update($conn);
 }
+
 ?>
 
 <?php include '..\..\includes\header.php'; ?>

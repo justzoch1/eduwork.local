@@ -3,7 +3,7 @@ session_start();
 include ("../../crud/realization/News.php");
 include ("../../config.php");
 
-$news = new News();
+$newsObj = new News();
 
 if ($_SESSION['role'] != 'admin') {
     header('Location: ../user/auth/login.php');
@@ -11,11 +11,11 @@ if ($_SESSION['role'] != 'admin') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['news_id'])) {
-    $news->show($conn);
+    $news = $newsObj->show($conn);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_news'])) {
-    $news->update($conn);
+    $newsObj->update($conn);
 }
 ?>
 

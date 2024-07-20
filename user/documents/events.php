@@ -1,9 +1,8 @@
 <?php
+session_start();
 
 include '../../config.php';
 include("../../modules/accountant/Accountant.php");
-
-session_start();
 
 $file = new Accountant();
 

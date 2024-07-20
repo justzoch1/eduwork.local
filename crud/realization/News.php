@@ -10,6 +10,7 @@ class News {
             $stmt = $conn->prepare($sql);
             $stmt->execute([$_POST['news_id']]);
             $news = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $news;
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }
@@ -20,8 +21,6 @@ class News {
             $sql = "DELETE FROM news WHERE id = ?";
             $stmt = $conn->prepare($sql);
             $stmt->execute([$_POST['news_id']]);
-            // header('Location: admin_panel.php');
-            exit();
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }
@@ -29,17 +28,15 @@ class News {
 
     public function update($conn) {
         try {
-            $sql = "UPDATE groups SET number_group = ?, number_students = ?, enrollment_year = ?, graduation_year = ?, classroom_teacher = ? WHERE id = ?";
+            $sql = "UPDATE news SET name = ?, description = ?, full_description = ? WHERE id = ?";
             $stmt = $conn->prepare($sql);
             $stmt->execute([
-                $_POST['number_group'],
-                $_POST['number_students'],
-                $_POST['enrollment_year'],
-                $_POST['graduation_year'],
-                $_POST['classroom_teacher'],
-                $_POST['group_id']
+                $_POST['name'],
+                $_POST['description'],
+                $_POST['full_description'],
+                $_POST['news_id']
             ]);
-            header('Location: admin_panel.php');
+            header('Location: ..\..\admin\admin_panel.php');
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }
@@ -54,7 +51,7 @@ class News {
                 $_POST['description'],
                 $_POST['full_description'],
             ]);
-            // header('Location: admin_panel.php');
+            header('Location: ..\..\admin\admin_panel.php');
             exit();
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');

@@ -1,15 +1,16 @@
 <?php 
 
-// include '../ACrud.php';
+// include("../Crud.php");
 
 class Teacher {
 
     public function show($conn) {
         try {
-            $sql = "SELECT * FROM students WHERE id = ?";
+            $sql = "SELECT * FROM teachers WHERE id = ?";
             $stmt = $conn->prepare($sql);
-            $stmt->execute([$_POST['student_id']]);
-            $student = $stmt->fetch(PDO::FETCH_ASSOC);
+            $stmt->execute([$_POST['teacher_id']]);
+            $teacher = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $teacher;
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }
@@ -20,8 +21,6 @@ class Teacher {
             $sql = "DELETE FROM teachers WHERE id = ?";
             $stmt = $conn->prepare($sql);
             $stmt->execute([$_POST['teacher_id']]);
-            // header('Location: admin_panel.php');
-            exit();
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }
@@ -29,7 +28,7 @@ class Teacher {
 
     public function update($conn) {
         try {
-            $sql = "UPDATE students SET last_name = ?, first_name = ?, middle_name = ?, birth_date = ?, gender = ?, address = ?, phone = ?, email = ?, group_number = ?, enrollment_date = ?, graduation_date = ? WHERE id = ?";
+            $sql = "UPDATE teachers SET last_name = ?, first_name = ?, middle_name = ?, birth_date = ?, gender = ?, address = ?, phone = ?, email = ?, employment_date = ?, position = ? WHERE id = ?";
             $stmt = $conn->prepare($sql);
             $stmt->execute([
                 $_POST['last_name'],
@@ -40,12 +39,11 @@ class Teacher {
                 $_POST['address'],
                 $_POST['phone'],
                 $_POST['email'],
-                $_POST['group_number'],
-                $_POST['enrollment_date'],
-                $_POST['graduation_date'],
-                $_POST['student_id']
+                $_POST['employment_date'],
+                $_POST['position'],
+                $_POST['teacher_id']
             ]);
-            header('Location: admin_panel.php');
+            header('Location: ..\..\admin\admin_panel.php');
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }

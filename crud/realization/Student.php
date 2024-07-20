@@ -10,6 +10,7 @@ class Student {
             $stmt = $conn->prepare($sql);
             $stmt->execute([$_POST['student_id']]);
             $student = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $student;
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }
@@ -20,8 +21,6 @@ class Student {
             $sql = "DELETE FROM students WHERE id = ?";
             $stmt = $conn->prepare($sql);
             $stmt->execute([$_POST['student_id']]);
-            // header('Location: admin_panel.php');
-            exit();
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }
@@ -45,7 +44,7 @@ class Student {
                 $_POST['graduation_date'],
                 $_POST['student_id']
             ]);
-            header('Location: admin_panel.php');
+            header('Location: ..\..\admin\admin_panel.php');
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }

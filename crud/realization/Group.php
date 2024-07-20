@@ -10,6 +10,7 @@ class Group {
             $stmt = $conn->prepare($sql);
             $stmt->execute([$_POST['group_id']]);
             $group = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $group;
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }
@@ -20,8 +21,6 @@ class Group {
             $sql = "DELETE FROM groups WHERE id = ?";
             $stmt = $conn->prepare($sql);
             $stmt->execute([$_POST['group_id']]);
-            // header('Location: admin\admin_panel.php');
-            exit();
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }
