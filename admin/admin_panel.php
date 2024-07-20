@@ -28,7 +28,7 @@ try {
 
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link" href="#" onclick="showContent('home')">Главная</a>
+        <a class="nav-link" href="#" onclick="showContent('home')">Приветствие</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#" onclick="showContent('news')">Новости</a>
@@ -43,17 +43,14 @@ try {
 
 <div id="home" class="container mt-4">
     <h3>Добро пожаловать в панель администратора</h3>
-    <p>Здесь будет содержимое главной страницы.</p>
+    <p>Здесь будет содержимое выбранной страницы.</p>
 </div>
 
 <?php 
 
 require_once('../admin/lists/news.php');
-
 require_once('../admin/lists/group.php');
-
 require_once('../admin/lists/teacher.php');
-
 require_once('../admin/lists/student.php');
 
 ?>

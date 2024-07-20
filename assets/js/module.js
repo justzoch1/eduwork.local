@@ -9,6 +9,16 @@ document.getElementById("add-news-btn").addEventListener("click", function() {
   this.style.display = "none";
 });
 
+document.getElementById("add-material-btn").addEventListener("click", function() {
+    document.getElementById("upload_form").style.display = "block";
+    this.style.display = "none";
+});
+
+document.getElementById("add-event-btn").addEventListener("click", function() {
+document.getElementById("upload_form").style.display = "block";
+this.style.display = "none";
+});
+
 function showUserForm() {
     var userType = document.getElementById('user_type').value;
     if (userType === 'student') {

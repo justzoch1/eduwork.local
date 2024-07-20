@@ -34,9 +34,9 @@ $uploads = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="container">
     <h3 class="text-center">Мероприятия</h3>
-
     <?php if ($_SESSION['role'] == 'admin'): ?>
-    <div class="upload-form">
+    <button type="button" class="btn btn-primary" id="add-event-btn">Добавить мероприятие</button>
+    <div id="upload_form" style=" display: none;">
         <h4>Загрузить файл</h4>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
@@ -118,4 +118,10 @@ $uploads = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
 </div>
 
+<script>
+document.getElementById("add-event-btn").addEventListener("click", function() {
+document.getElementById("upload_form").style.display = "block";
+this.style.display = "none";
+});
+</script>
 <?php include '../../includes/footer.php'; ?>

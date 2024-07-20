@@ -37,7 +37,8 @@ $uploads = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h3 class="text-center">Материалы</h3>
 
     <?php if ($_SESSION['role'] == 'admin'): ?>
-    <div class="upload-form">
+    <button type="button" class="btn btn-primary" id="add-material-btn">Добавить документ</button>
+    <div id="upload_form" style=" display: none;">
         <h4>Загрузить файл</h4>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
@@ -50,7 +51,7 @@ $uploads = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="form-group">
             <select name="theme[]" class="form-control" id="theme">
-                <option value="" selected disabled>Выберите тему документа</option>
+                <label for="file_description">Тема документа</label>
                 <option value="Журнал_по_воспитательной_работе">Журнал по воспитательной работе</option>
                 <option value="Тематическое_планирование">Тематическое планирование "Разговоры о важном"</option>
                 <option value="Педагогическая_характеристика">Педагогическая характеристика</option>
@@ -125,3 +126,11 @@ $uploads = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <?php include '../../includes/footer.php'; ?>
+
+<script>
+    document.getElementById("add-material-btn").addEventListener("click", function() {
+    document.getElementById("upload_form").style.display = "block";
+    this.style.display = "none";
+});
+
+</script>
