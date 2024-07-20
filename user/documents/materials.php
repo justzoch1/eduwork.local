@@ -66,7 +66,6 @@ $uploads = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <button type="submit" class="btn btn-primary" name="upload">Загрузить</button>
 
-
         </form>
     </div>
     <?php endif; ?>
@@ -94,22 +93,26 @@ $uploads = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         if (in_array($fileExtension, $imageExtensions)): ?>
                             <img src="<?php echo htmlspecialchars($upload['file_path']); ?>" alt="Preview" style="max-width: 100px;">
                         <?php else: ?>
-                            <a href="<?php echo htmlspecialchars($upload['file_path']); ?>" download>Скачать</a>
+                            <?php 
+                                $pathInfo = pathinfo($upload['file_path']);
+                                echo "<p>" . $pathInfo['extension'] . "</p>"; 
+                            ?>
                         <?php endif; ?>
                     </td>
                     <td>
-                        <?php
-                        if (in_array($fileExtension, $imageExtensions)): ?>
-                            <a href="<?php echo htmlspecialchars($upload['file_path']); ?>" target="_blank">Предпросмотр</a>
+                        <?php if (in_array($fileExtension, $imageExtensions)): ?>
+                            <a href="<?php echo htmlspecialchars($upload['file_path']); ?>" target="_blank">Показать</a>
                         <?php else: ?>
-                            <a href="<?php echo htmlspecialchars($upload['file_path']); ?>" download>Скачать</a>
+                            <p>Не предусмотрен</p>
                         <?php endif; ?>
                     </td>
                     <td>
+                        <?php if ($_SESSION['role'] == 'admin'): ?>
                         <form method="post" style="display:inline-block;">
                             <input type="hidden" name="file_id" value="<?php echo $upload['id']; ?>">
                             <button type="submit" class="btn btn-danger" name="delete">Удалить</button>
                         </form>
+                        <?php endif; ?>
                         <form  method="post" style="display:inline-block;">
                             <input type="hidden" name="file_path" value="<?php echo $upload['file_path']; ?>">
                             <button type="submit" class="btn btn-primary" name="download">Скачать</button>

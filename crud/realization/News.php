@@ -51,8 +51,6 @@ class News {
                 $_POST['description'],
                 $_POST['full_description'],
             ]);
-            header('Location: ..\..\admin\admin_panel.php');
-            exit();
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }

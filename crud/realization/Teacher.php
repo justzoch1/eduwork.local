@@ -66,7 +66,6 @@ class Teacher {
                 $_POST['employment_date'],
                 'teacher'
             ]);
-            header('Location: admin_panel.php');
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }

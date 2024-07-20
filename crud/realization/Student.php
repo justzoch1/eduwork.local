@@ -68,8 +68,6 @@ class Student {
                 $_POST['graduation_date'],
                 'student'
             ]);
-            header('Location: admin_panel.php');
-        exit();
         } catch (PDOException $ex) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }
