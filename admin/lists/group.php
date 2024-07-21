@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_group'])) {
 ?>
 
 <div id="groups" class="container mt-4" style="display: none;">
-    <h3>Группы</h3>
     <div id="form">
     <button type="button" class="btn btn-primary" id="add-group-btn">Добавить группу</button>
     <form id="group_form" method="POST" style=" display: none;" >
@@ -44,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_group'])) {
             <button type="submit" class="btn btn-primary" name="add_group">Добавить группу</button>
         </div>
     </form>
-
+    
     <h3>Список групп</h3>
     <table class="table">
         <thead>

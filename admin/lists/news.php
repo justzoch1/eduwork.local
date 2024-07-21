@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_news'])) {
 ?>
 
 <div id="news" class="container mt-4" style="display: none;">
-    <h3>Новости</h3>
     <div id="form">
     
     <button type="button" class="btn btn-primary" id="add-news-btn">Добавить новость</button>

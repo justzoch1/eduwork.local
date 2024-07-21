@@ -15,8 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_student'])) {
 
 ?>
 
-<form method="POST" >
-        <div id="student_form" style="display: none;">
+<div id="students" class="container mt-4" style="display: none;">
+<button type="button" class="btn btn-primary" id="add-student-btn">Добавить студента</button>
+        <form id="student_form" method="POST" style=" display: none;" >
             <div class="form-group">
                 <label for="last_name">Фамилия:</label>
                 <input type="text" class="form-control" name="last_name" required>
@@ -62,10 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_student'])) {
                 <input type="date" class="form-control" name="graduation_date" required>
             </div>
             <button type="submit" class="btn btn-primary" name="add_student">Добавить студента</button>
-        </div>
     </form>
 
-    <div id="students">
     <h3>Список студентов</h3>
     <table class="table">
         <thead>

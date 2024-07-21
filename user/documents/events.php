@@ -119,9 +119,9 @@ $uploads = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <script>
-document.getElementById("add-event-btn").addEventListener("click", function() {
-document.getElementById("upload_form").style.display = "block";
-this.style.display = "none";
+    document.getElementById("add-event-btn").addEventListener("click", function() {
+    document.getElementById("upload_form").style.display = "block";
+    this.style.display = "none";
 });
 </script>
 <?php include '../../includes/footer.php'; ?>

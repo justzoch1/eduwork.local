@@ -9,35 +9,15 @@ document.getElementById("add-news-btn").addEventListener("click", function() {
   this.style.display = "none";
 });
 
-document.getElementById("add-material-btn").addEventListener("click", function() {
-    document.getElementById("upload_form").style.display = "block";
+document.getElementById("add-student-btn").addEventListener("click", function() {
+    document.getElementById("student_form").style.display = "block";
     this.style.display = "none";
 });
-
-document.getElementById("add-event-btn").addEventListener("click", function() {
-document.getElementById("upload_form").style.display = "block";
+  
+document.getElementById("add-teacher-btn").addEventListener("click", function() {
+document.getElementById("teacher_form").style.display = "block";
 this.style.display = "none";
 });
-
-function showUserForm() {
-    var userType = document.getElementById('user_type').value;
-    if (userType === 'student') {
-        document.getElementById('student_form').style.display = 'block';
-        document.getElementById('teacher_form').style.display = 'none';
-        document.getElementById('add_user').style.display = 'block';
-        hideUsersExceptRole('student');
-    } else if (userType === 'teacher') {
-        document.getElementById('student_form').style.display = 'none';
-        document.getElementById('teacher_form').style.display = 'block';
-        document.getElementById('add_user').style.display = 'block';
-        hideUsersExceptRole('teacher');
-    } else {
-        document.getElementById('student_form').style.display = 'none';
-        document.getElementById('teacher_form').style.display = 'none';
-        document.getElementById('add_user').style.display = 'none';
-        showAllUsers();
-    }
-}
 
 function hideUsersExceptRole(role) {
     var tableRows = document.querySelectorAll('.user-row');

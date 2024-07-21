@@ -37,7 +37,10 @@ try {
         <a class="nav-link" href="#" onclick="showContent('groups')">Группы</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#" onclick="showContent('admin-content')">Списки</a>
+        <a class="nav-link" href="#" onclick="showContent('students')">Студенты</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#" onclick="showContent('teachers')">Преподаватели</a>
     </li>
 </ul>
 
@@ -50,8 +53,8 @@ try {
 
 require_once('../admin/lists/news.php');
 require_once('../admin/lists/group.php');
-require_once('../admin/lists/teacher.php');
 require_once('../admin/lists/student.php');
+require_once('../admin/lists/teacher.php');
 
 ?>
 
