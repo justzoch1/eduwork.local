@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ("../../crud/realization/Group.php");
+include ("../../modules/cruds/Group.php");
 include ("../../config.php");
 
 $groupObj = new Group();

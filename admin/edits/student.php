@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ("../../crud/realization/Student.php");
+include ("../../modules/cruds/Student.php");
 include ("../../config.php");
 
 $studentObj = new Student();

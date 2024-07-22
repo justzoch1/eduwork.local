@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ("../../crud/realization/News.php");
+include ("../../modules/cruds/News.php");
 include ("../../config.php");
 
 $newsObj = new News();

@@ -1,7 +1,5 @@
 <?php
 
-// include("../ACrud.php");
-
 class Group {
 
     public function show($conn) {

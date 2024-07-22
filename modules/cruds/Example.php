@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-class Crud {
+class Example {
 
     public function show($conn) {
         // Отобразить конкретную ***
@@ -19,4 +19,3 @@ class Crud {
     }
 
 }
-?>

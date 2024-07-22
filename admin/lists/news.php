@@ -1,7 +1,7 @@
 <?php 
 
 include '..\config.php';
-require_once '..\crud\realization\News.php';
+require_once '..\modules\cruds\News.php';
 
 $news = new News();
 

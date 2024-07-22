@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ("../../crud/realization/Teacher.php");
+include ("../../modules/cruds/Teacher.php");
 include ("../../config.php");
 
 $teacherObj = new Teacher();

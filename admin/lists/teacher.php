@@ -1,7 +1,7 @@
 <?php
 
 include '..\config.php';
-require_once '..\crud\realization\Teacher.php';
+require_once '..\modules\cruds\Teacher.php';
 
 $teacher = new Teacher();
 

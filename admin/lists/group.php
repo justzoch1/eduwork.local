@@ -1,7 +1,7 @@
 <?php 
 
 include '..\config.php';
-require_once '..\crud\realization\Group.php';
+require_once '..\modules\cruds\Group.php';
 
 $group = new Group();
 
