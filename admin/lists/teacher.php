@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_teacher'])) {
         </thead>
         <tbody>
             <?php
-            $result = $conn->query("SELECT * FROM teachers");
+            $result = $conn->query("SELECT * FROM teachers ORDER BY id DESC");
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";
                 echo "<td>" . htmlspecialchars($row['id']) . "</td>";

@@ -4,7 +4,7 @@ include 'config.php';
 session_start();
 
 // Получение новостей из базы данных
-$stmt = $conn->prepare("SELECT * FROM news");
+$stmt = $conn->prepare("SELECT * FROM news ORDER BY id DESC");
 $stmt->execute();
 $news = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>

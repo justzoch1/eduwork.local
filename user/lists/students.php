@@ -41,7 +41,7 @@ include '../../config.php';
                 $searchParam = "%$search%";
                 $stmt->execute([$searchParam, $searchParam, $searchParam, $searchParam]);
             } else {
-                $stmt = $conn->prepare("SELECT * FROM students WHERE role = 'student'");
+                $stmt = $conn->prepare("SELECT * FROM students WHERE role = 'student' ORDER BY id");
                 $stmt->execute();
             }
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {

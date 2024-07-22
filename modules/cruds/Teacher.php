@@ -51,7 +51,7 @@ class Teacher {
 
     public function create($conn) {
         try {
-            $sql = $conn->prepare("INSERT INTO teachers (last_name, first_name, middle_name, birth_date, gender, address, phone, email, position, employment_date role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $sql = "INSERT INTO teachers (last_name, first_name, middle_name, birth_date, gender, address, phone, email, position, employment_date, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
             $stmt->execute([
                 $_POST['last_name'],

@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_group'])) {
         </thead>
         <tbody>
             <?php
-            $result = $conn->query("SELECT * FROM groups");
+            $result = $conn->query("SELECT * FROM groups ORDER BY id DESC");
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";
                 echo "<td>" . htmlspecialchars($row['id']) . "</td>";

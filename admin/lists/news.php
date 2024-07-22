@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_news'])) {
         </thead>
         <tbody>
             <?php
-            $result = $conn->query("SELECT * FROM news");
+            $result = $conn->query("SELECT * FROM news ORDER BY id DESC");
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";
                 echo "<td>" . htmlspecialchars($row['id']) . "</td>";
