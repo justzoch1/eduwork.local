@@ -11,6 +11,7 @@ A web application for teachers with implemented CRUD functionality, authorizatio
 Technologies: PHP, PostgreSQL, PDO, PhpSpreadsheet, jQuery, and a touch of magic.
 
 To start using the application, don't forget to enter the command:
+
 ``` $ composer update ```
 
 You also need to create a database edudb and add tables to it by entering the query string of your browser http://localhost/eduwork.local/setup.php or by using the script edudb.sql from the database folder.
