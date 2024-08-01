@@ -10,6 +10,6 @@ A web application for teachers with implemented CRUD functionality, authorizatio
 
 Technologies: PHP, PostgreSQL, PDO, PhpSpreadsheet, jQuery, and a touch of magic.
 
-You also need to create a database edudb and add tables to it by entering the query string of your browser http://localhost/eduwork.local/setup.php or by using the script edudb.sql from the database folder.
+You need to create a database edudb and add tables to it by entering the query string of your browser http://localhost/eduwork.local/setup.php or by using the script edudb.sql from the database folder.
 
 Congratulations, now you can make changes to my college's demo site!
