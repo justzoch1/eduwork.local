@@ -8,7 +8,7 @@
             $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
         
             if ($_FILES['file']['size'] > 12 * 1024 * 1024) { 
-                echo "File size exceeds 12MB limit.";
+                echo "<script>alert(\"Файл не должен превышать 12 мегабайт\");</script>";
             } else {
                 $allowedTypes = ['jpg', 'png', 'jpeg', 'gif', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx'];
                 if (in_array($fileType, $allowedTypes)) {
@@ -16,12 +16,12 @@
                         $theme = implode(', ', $_POST['theme']);
                         $stmt = $conn->prepare("INSERT INTO uploads (file_name, file_description, file_path, theme) VALUES (?, ?, ?, ?)");
                         $stmt->execute([$_POST['file_name'], $_POST['file_description'], $targetFilePath, $theme]);
-                        echo "Файл успешно загружен.";
+                        echo "<script>alert(\"Файл успешно загружен\");</script>";
                     } else {
-                        echo "Извините, произошла ошибка при загрузке вашего файла.";
+                        echo "<script>alert(\"Извините, произошла ошибка при загрузке вашего файла.\");</script>";
                     }
                 } else {
-                    echo "К сожалению, разрешены только файлы в форматах JPG, JPEG, PNG, GIF, PDF, DOC, DOCX, XLS, XLSX, PPT и PPTX.";
+                    echo "<script>alert(\"К сожалению, разрешены только файлы в форматах JPG, JPEG, PNG, GIF, PDF, DOC, DOCX, XLS, XLSX, PPT и PPTX.\");</script>";
                 }
             }
         }
@@ -40,12 +40,11 @@
                     header('Location: #');
                     exit();
                 } else {
-                    echo "Ошибка при удалении файла.";
+                    echo "<script>alert(\"Ошибка при удалении файла.\");</script>";
                 }
             } else {
-                echo "Файл не найден.";
+                echo "<script>alert(\"Файл не найден.\");</script>";
             }
-        
         }
 
         public function download() {
@@ -64,7 +63,7 @@
                 readfile($filePath);
                 exit;
             } else {
-                echo "Файл не найден или недоступен.";
+                echo "<script>alert(\"Файл не найден или недоступен.\");</script>";
             }
         }
 
