@@ -16,7 +16,6 @@
                         $theme = implode(', ', $_POST['theme']);
                         $stmt = $conn->prepare("INSERT INTO uploads (file_name, file_description, file_path, theme) VALUES (?, ?, ?, ?)");
                         $stmt->execute([$_POST['file_name'], $_POST['file_description'], $targetFilePath, $theme]);
-                        echo "<script>alert(\"Файл успешно загружен\");</script>";
                     } else {
                         echo "<script>alert(\"Извините, произошла ошибка при загрузке вашего файла.\");</script>";
                     }
