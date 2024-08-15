@@ -2,7 +2,7 @@
 
 A web application for teachers with implemented CRUD functionality, authorization/registration, an admin panel, a connected PostgreSQL (PDO), convenient file management, and the ability to convert a database table to Excel!
 
-![image](https://github.com/user-attachments/assets/8b83e715-cd4a-4479-ae3b-9476e540af1b)
+![Uploading Снимок экрана 2024-08-15 121100.png…]()
 
 ![image](https://github.com/user-attachments/assets/411d700e-0444-435b-84c6-2240cc65d572)
 
