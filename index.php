@@ -16,7 +16,7 @@ $news = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($news as $new): ?>
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="assets/images/two.gif" class="card-img-top" alt="<?php echo $new['name']; ?>">
+                    <img src="assets/images/News.gif" class="card-img-top" alt="<?php echo $new['name']; ?>">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $new['name']; ?></h5>
                         <p class="card-text"><?php echo $new['description']; ?></p>
