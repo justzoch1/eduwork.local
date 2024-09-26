@@ -2,7 +2,7 @@
     class Accountant {
 
         public function upload($conn) {
-            $uploadDir = '../../uploads/';
+            $uploadDir = '../../../public/uploads/';
             $fileName = basename($_FILES['file']['name']);
             $targetFilePath = $uploadDir . $fileName;
             $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);

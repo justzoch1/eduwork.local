@@ -1,9 +1,9 @@
 <?php
 
 $site_title = "ГБПОУ РО 'КТСИА'";
-$db_host = "localhost";
+$db_host = "postgres";
 $db_name = "edudb";
-$db_user = "postgres";
+$db_user = "admin";
 $db_password = "111";
 
 try {

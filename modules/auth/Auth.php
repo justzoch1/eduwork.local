@@ -15,7 +15,7 @@ class Auth {
             $_SESSION['role'] = $user['role'];
 
             if ($user['role'] == 'admin') {
-                header('Location: ../../../admin/admin_panel.php');
+                header('Location: ../../../experience/admin/admin_panel.php');
             } else {
                 header('Location: ../../../index.php');
             }
@@ -25,7 +25,7 @@ class Auth {
 
     public function logout() {
         session_destroy();
-        header('Location: http://localhost/eduwork.local/index.php');
+        header('Location: http://localhost/index.php');
         exit();
     }
 }
