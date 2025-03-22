@@ -14,7 +14,6 @@ try {
     $conn->exec($sql);
     echo "Таблица users создана успешно.<br>";
 
-    //admin
     $stmt = $conn->prepare("SELECT COUNT(*) FROM users WHERE username = 'admin'");
     $stmt->execute();
     if ($stmt->fetchColumn() == 0) {
@@ -24,7 +23,6 @@ try {
         echo "Администратор добавлен успешно.<br>";
     }
 
-    //teacher
     $stmt = $conn->prepare("SELECT COUNT(*) FROM users WHERE username = 'teacher'");
     $stmt->execute();
     if ($stmt->fetchColumn() == 0) {

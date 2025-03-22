@@ -1,16 +1,14 @@
-<?php 
-
-include '..\config.php';
+<?php
 require_once '..\modules\cruds\Group.php';
 
-$group = new Group();
+$group = new Group($conn);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_group'])) {
-    $group->create($conn);
+    $group->create();
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_group'])) {
-    $group->delete($conn);
+    $group->delete();
 }
 
 ?>

@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include '..\config.php';
 
@@ -57,7 +56,5 @@ require_once('../admin/lists/student.php');
 require_once('../admin/lists/teacher.php');
 
 ?>
-
-
 
 <script src="../assets/js/module.js"></script>

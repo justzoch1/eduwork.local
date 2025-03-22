@@ -4,17 +4,17 @@ include("../../../config.php");
 include("../Auth.php");
 
 session_start();
-$auth = new Auth;
+$auth = new Auth($conn);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $auth->login($conn);
+    $auth->login();
 }
 ?>
 
 <?php include '../../../includes/header.php'; ?>
 
 <h2>Авторизация</h2>
-<p>Пожалуйста, введите ваше имя пользователя и пароль, чтобы войти в систему.</p>
+<p>Введите ваше имя пользователя и пароль, чтобы войти в систему.</p>
 <?php if (!empty($error)): ?>
     <div class="alert alert-danger"><?php echo $error; ?></div>
 <?php endif; ?>
@@ -29,12 +29,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <button type="submit" class="btn btn-primary">Войти</button>
 </form>
-
-<div class="text-center mt-4">
-    <p>Данные пользователя для администратора: admin</p>
-    <p>Данные пользователя для преподавателя: teacher</p>
-    <p>Данные пароля для администратора: admin</p>
-    <p>Данные пароля для администратора: teacher</p>
-</div>
 
 <?php include '../../../includes/footer.php'; ?>

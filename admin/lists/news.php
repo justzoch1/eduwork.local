@@ -1,16 +1,14 @@
-<?php 
-
-include '..\config.php';
+<?php
 require_once '..\modules\cruds\News.php';
 
-$news = new News();
+$news = new News($conn);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_news'])) {
-    $news->create($conn);
+    $news->create();
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_news'])) {
-    $news->delete($conn);
+    $news->delete();
 }
 
 ?>

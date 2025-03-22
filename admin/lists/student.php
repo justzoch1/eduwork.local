@@ -1,16 +1,14 @@
-<?php 
-
-include '..\config.php';
+<?php
 require_once '..\modules\cruds\Student.php';
 
-$student = new Student();
+$student = new Student($conn);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_student'])) {
-    $student->create($conn);
+    $student->create();
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_student'])) {
-    $student->delete($conn);
+    $student->delete();
 }
 
 ?>

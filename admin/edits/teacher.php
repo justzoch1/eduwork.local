@@ -1,9 +1,8 @@
 <?php
 session_start();
-include ("../../modules/cruds/Teacher.php");
-include ("../../config.php");
+include '../../modules/cruds/Teacher.php';
 
-$teacherObj = new Teacher();
+$teacherObj = new Teacher($conn);
 
 if ($_SESSION['role'] != 'admin') {
     header('Location: ../user/auth/login.php');
@@ -11,11 +10,11 @@ if ($_SESSION['role'] != 'admin') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['teacher_id'])) {
-    $teacher = $teacherObj->show($conn);
+    $teacher = $teacherObj->show();
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_teacher'])) {
-    $teacherObj->update($conn);
+    $teacherObj->update();
 }
 
 ?>

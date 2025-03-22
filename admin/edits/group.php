@@ -1,9 +1,8 @@
 <?php
 session_start();
-include ("../../modules/cruds/Group.php");
-include ("../../config.php");
+include '../../modules/cruds/Group.php';
 
-$groupObj = new Group();
+$groupObj = new Group($conn);
 
 if ($_SESSION['role'] != 'admin') {
     header('Location: ../user/auth/login.php');
@@ -11,11 +10,11 @@ if ($_SESSION['role'] != 'admin') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['group_id'])) {
-    $group = $groupObj->show($conn);
+    $group = $groupObj->show();
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_group'])) {
-    $groupObj->update($conn);
+    $groupObj->update();
 }
 ?>
 
