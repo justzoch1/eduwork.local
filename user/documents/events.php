@@ -7,7 +7,7 @@ include("../../modules/accountant/Accountant.php");
 $file = new Accountant();
 
 if ($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'teacher') {
-    header('Location: ../../modules/auth/autorize/login.php');
+    header('Location: '. $_SERVER['DOCUMENT_ROOT'] .'/modules/auth/autorize/login');
     exit();
 }
 
@@ -31,7 +31,6 @@ $uploads = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?php include '../../includes/header.php'; ?>
-
 <div class="container">
     <h3 class="text-center">Мероприятия</h3>
     <?php if ($_SESSION['role'] == 'admin'): ?>

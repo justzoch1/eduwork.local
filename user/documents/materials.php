@@ -7,7 +7,7 @@ include("../../modules/accountant/Accountant.php");
 $file = new Accountant();
 
 if ($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'teacher') {
-    header('Location: ../../modules/auth/autorize/login.php');
+    header('Location: ../../../modules/auth/autorize/login');
     exit();
 }
 

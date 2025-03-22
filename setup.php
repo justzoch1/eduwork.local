@@ -90,7 +90,7 @@ try {
         file_description TEXT NOT NULL,
         file_path TEXT NOT NULL,
         theme TEXT,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
     $conn->exec($sql);
     echo "Таблица uploads создана успешно.<br>";
