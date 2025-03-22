@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../../modules/cruds/News.php';
+require_once '../../config.php';
 
 $newsObj = new News($conn);
 
@@ -34,7 +35,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_news'])) {
     </div>
     <div class="form-group">
         <label for="gender">Подробное описание:</label>
-        <input type="text" class="form-control" name="full_description" value="<?php echo $news['full_description']; ?>" required>
+        <textarea class="form-control" id="mytextarea" name="full_description" required><?php echo htmlspecialchars($news['full_description']); ?></textarea>
     </div>
     <button type="submit" class="btn btn-primary" name="update_news">Сохранить изменения</button>
 </form>
+
+<script>
+    tinymce.init({
+        selector: '#mytextarea'
+    });
+</script>
+
+<?php include '..\..\includes\footer.php'; ?>

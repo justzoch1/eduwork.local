@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../../modules/cruds/Student.php';
+require_once '../../config.php';
 
 $studentObj = new Student($conn);
 
@@ -70,3 +71,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_student'])) {
     </div>
     <button type="submit" class="btn btn-primary" name="update_student">Сохранить изменения</button>
 </form>
+
+<?php include '..\..\includes\footer.php'; ?>

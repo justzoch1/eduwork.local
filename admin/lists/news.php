@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_news'])) {
             </div>
             <div class="form-group">
                 <label for="birth_date">Подробное описание:</label>
-                <input type="text" class="form-control" id="full_description" name="full_description" required>
+                <textarea type="text" class="form-control" id="full_description" name="full_description"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" name="add_news">Добавить новость</button>
         </div>
@@ -72,3 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_news'])) {
 </div>
 </div>
 
+<script>
+    tinymce.init({
+        selector: '#full_description'
+    });
+</script>

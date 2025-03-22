@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_student'])) {
                 echo "<input type='hidden' name='student_id' value='{$row['id']}'>";
                 echo "<button type='submit' class='btn btn-danger' name='delete_student'>Удалить</button>";
                 echo "</form>";
-                echo "<form method='post' action='edits/student.php' style='display:inline-block;'>";
+                echo "<form method='post' action='edits/student' style='display:inline-block;'>";
                 echo "<input type='hidden' name='student_id' value='{$row['id']}'>";
                 echo "<button type='submit' class='btn btn-warning' name='edit_student'>Редактировать</button>";
                 echo "</form>";

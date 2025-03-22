@@ -46,7 +46,7 @@ class Teacher extends Crud {
                 $_POST['position'],
                 $_POST['teacher_id']
             ]);
-            header('Location: ..\..\admin\admin_panel.php');
+            header('Location: ..\..\admin\admin_panel');
         } catch (PDOException) {
             throw new PDOException(Crud::ERROR_MESSAGE);
         }

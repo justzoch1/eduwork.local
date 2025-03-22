@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../../modules/cruds/Group.php';
+require_once '../../config.php';
 
 $groupObj = new Group($conn);
 
@@ -45,3 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_group'])) {
     </div>
     <button type="submit" class="btn btn-primary" name="update_group">Сохранить изменения</button>
 </form>
+
+<?php include '..\..\includes\footer.php'; ?>
+

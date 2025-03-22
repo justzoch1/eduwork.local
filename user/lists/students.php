@@ -62,7 +62,6 @@ include '../../config.php';
             ?>
         </tbody>
     </table>
-
 </div>
 
 <?php include '../../includes/footer.php'; ?>

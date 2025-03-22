@@ -39,7 +39,7 @@ class News extends Crud {
                 $_POST['full_description'],
                 $_POST['news_id']
             ]);
-            header('Location: ..\..\admin\admin_panel.php');
+            header('Location: ..\..\admin\admin_panel');
         } catch (PDOException) {
             throw new PDOException(Crud::ERROR_MESSAGE);
         }

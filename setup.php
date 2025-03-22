@@ -14,6 +14,7 @@ try {
     $conn->exec($sql);
     echo "Таблица users создана успешно.<br>";
 
+    //admin
     $stmt = $conn->prepare("SELECT COUNT(*) FROM users WHERE username = 'admin'");
     $stmt->execute();
     if ($stmt->fetchColumn() == 0) {
@@ -23,6 +24,7 @@ try {
         echo "Администратор добавлен успешно.<br>";
     }
 
+    //teacher
     $stmt = $conn->prepare("SELECT COUNT(*) FROM users WHERE username = 'teacher'");
     $stmt->execute();
     if ($stmt->fetchColumn() == 0) {
@@ -87,8 +89,8 @@ try {
         file_name TEXT NOT NULL,
         file_description TEXT NOT NULL,
         file_path TEXT NOT NULL,
-        uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        theme TEXT
+        theme TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     )";
     $conn->exec($sql);
     echo "Таблица uploads создана успешно.<br>";
@@ -97,7 +99,8 @@ try {
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
     description TEXT NOT NULL,
-    full_description TEXT NOT NULL
+    full_description TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
     $conn->exec($sql);
     echo "Таблица news создана успешно.<br>";

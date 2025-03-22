@@ -41,7 +41,7 @@ class Group extends Crud {
                 $_POST['classroom_teacher'],
                 $_POST['group_id']
         ]);
-        header('Location: ..\..\admin\admin_panel.php');
+        header('Location: ..\..\admin\admin_panel');
         } catch (PDOException) {
             throw new PDOException('Возникла ошибка, пересмотрите свой запрос.');
         }

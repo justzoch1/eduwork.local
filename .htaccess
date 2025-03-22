@@ -1,0 +1,10 @@
+RewriteEngine on
+
+RewriteRule ^user/documents/materials/([^/]+)$ user/documents/materials.php?docs=$1 [L,QSA]
+RewriteRule ^user/documents/events/([^/]+)$ user/documents/events.php?docs=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^(.*)$ $1.php [L]

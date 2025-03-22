@@ -47,7 +47,7 @@ class Student extends Crud {
                 $_POST['graduation_date'],
                 $_POST['student_id']
             ]);
-            header('Location: ..\..\admin\admin_panel.php');
+            header('Location: ..\..\admin\admin_panel');
         } catch (PDOException) {
             throw new PDOException(Crud::ERROR_MESSAGE);
         }

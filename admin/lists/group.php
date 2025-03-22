@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_group'])) {
                 echo "<input type='hidden' name='group_id' value='{$row['id']}'>";
                 echo "<button type='submit' class='btn btn-danger' name='delete_group'>Удалить</button>";
                 echo "</form>";
-                echo "<form method='post' action='edits/group.php' style='display:inline-block;'>";
+                echo "<form method='post' action='edits/group' style='display:inline-block;'>";
                 echo "<input type='hidden' name='group_id' value='{$row['id']}'>";
                 echo "<button type='submit' class='btn btn-warning' name='edit_group'>Редактировать</button>";
                 echo "</form>";
